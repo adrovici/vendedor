@@ -249,7 +249,7 @@ class Thread(ThreadABC):
                               timestamp=datetime.utcnow())
 
         if not message:
-            message = f'{closer.mention} has closed this Modmail thread.'
+            message = f'{closer.mention} ha cerrado esta disputa.'
         embed.description = message
         embed.set_footer(text='Replying will create a new thread',
                          icon_url=self.bot.guild.icon_url)
