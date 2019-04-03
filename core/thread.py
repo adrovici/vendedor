@@ -136,9 +136,9 @@ class Thread(ThreadABC):
             description=thread_creation_response,
             timestamp=datetime.utcnow(),
         )
-        embed.set_footer(text='Your message has been sent',
+        embed.set_footer(text='Tu mensaje ha sido enviado',
                          icon_url=self.bot.guild.icon_url)
-        embed.set_author(name='Thread Created')
+        embed.set_author(name='Consulta Creada')
 
         if creator is None:
             self.bot.loop.create_task(recipient.send(embed=embed))
@@ -244,14 +244,14 @@ class Thread(ThreadABC):
 
         # Thread closed message
 
-        embed = discord.Embed(title='Thread Closed',
+        embed = discord.Embed(title='Consulta Cerrada',
                               color=discord.Color.red(),
                               timestamp=datetime.utcnow())
 
         if not message:
-            message = f'{closer.mention} ha cerrado esta disputa.'
+            message = f'{closer.mention} ha cerrado tu consulta. Gracias por usar el sistema de soporte.'
         embed.description = message
-        embed.set_footer(text='Replying will create a new thread',
+        embed.set_footer(text='Si respondes a este mensaje, crearás una nueva consulta',
                          icon_url=self.bot.guild.icon_url)
 
         if not silent and self.recipient is not None:
