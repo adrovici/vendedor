@@ -244,7 +244,7 @@ class Thread(ThreadABC):
 
         # Thread closed message
 
-        embed = discord.Embed(title='Compra Completada,
+        embed = discord.Embed(title='Compra Completada',
                               color=discord.Color.red(),
                               timestamp=datetime.utcnow())
 
