@@ -138,7 +138,7 @@ class Thread(ThreadABC):
         )
         embed.set_footer(text='Tu mensaje ha sido enviado',
                          icon_url=self.bot.guild.icon_url)
-        embed.set_author(name='Consulta Creada')
+        embed.set_author(name='Pedido en Proceso')
 
         if creator is None:
             self.bot.loop.create_task(recipient.send(embed=embed))
@@ -244,14 +244,14 @@ class Thread(ThreadABC):
 
         # Thread closed message
 
-        embed = discord.Embed(title='Consulta Cerrada',
+        embed = discord.Embed(title='Compra Completada,
                               color=discord.Color.red(),
                               timestamp=datetime.utcnow())
 
         if not message:
-            message = f'{closer.mention} ha cerrado tu consulta. Gracias por usar el sistema de soporte.'
+            message = f'{closer.mention} ha atendido tu pedido. Gracias por confiar en Discord Server Services.'
         embed.description = message
-        embed.set_footer(text='Si respondes a este mensaje, crearás una nueva consulta',
+        embed.set_footer(text='Responde a este mensaje si deseas comprar mas productos',
                          icon_url=self.bot.guild.icon_url)
 
         if not silent and self.recipient is not None:
